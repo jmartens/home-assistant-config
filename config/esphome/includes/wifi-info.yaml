@@ -1,0 +1,13 @@
+---
+# https://esphome.io/components/text_sensor/wifi_info.html?highlight=wifi%20info
+
+platform: wifi_info
+ip_address:
+  name: ${upper_devicename} IP address
+  icon: mdi:ip-network-outline
+ssid:
+  name: ${upper_devicename} SSID
+  icon: mdi:access-point-network
+bssid:
+  name: ${upper_devicename} MAC address
+  icon: mdi:expansion-card-variant
