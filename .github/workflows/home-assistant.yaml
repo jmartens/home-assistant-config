@@ -1,14 +1,17 @@
+# yamllint line-length: {max: 120, allow-non-breakable-words: true}
+
 ---
 name: Home Assistant CI
 
+# yamllint disable-line rule:truthy
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
   schedule:
     - cron: 0 12 * * *
-    
+
 jobs:
   yamllint:
     runs-on: ubuntu-latest
