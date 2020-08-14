@@ -1,3 +1,4 @@
+---
 substitutions:
   devicename: esp12f
   upper_devicename: Esp12f
@@ -29,10 +30,10 @@ switch:
     pin: GPIO15
     icon: mdi:toggle-switch-outline
 
-text_sensor: 
+text_sensor:
   - !include includes/wifi-info.yaml
   - !include includes/esphome.yaml
-  
+
 sensor:
   - platform: ct_clamp
     sensor: adc_sensor
@@ -41,7 +42,7 @@ sensor:
   # Example source sensor
   - platform: adc
     pin: A0
-    id: adc_sensor  
+    id: adc_sensor
     name: Zaag U (${upper_devicename})
     update_interval: 1s
   - !include includes/wifi-signal-strength.yaml
