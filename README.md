@@ -26,7 +26,7 @@ This is my personal Home Assistant configuration, running my home automations.
 [last-commit-shield]: https://img.shields.io/github/last-commit/jmartens/home-assistant-config.svg
 
 [stars-shield]: https://img.shields.io/github/stars/jmartens/home-assistant-config.svg?style=social&label=Stars
-[watchers-shield]: https://img.shields.io/github/watchers/frenck/home-assistant-config.svg?style=social&label=Watchers
+[watchers-shield]: https://img.shields.io/github/watchers/jmartens/home-assistant-config.svg?style=social&label=Watchers
 [forks-shield]: https://img.shields.io/github/forks/jmartens/home-assistant-config.svg?style=social&label=Forks
 
 [home-assistant]: https://home-assistant.io
