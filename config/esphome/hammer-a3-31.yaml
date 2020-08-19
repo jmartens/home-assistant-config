@@ -1,0 +1,37 @@
+---
+substitutions:
+  devicename: a3-31
+  upper_devicename: A3-31
+
+esphome:
+  name: ${devicename}
+  platform: ESP8266
+  board: esp01_1m
+
+<<: !include includes/wifi-connection.yaml
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: !secret pwd_wifi_snetram_nl
+
+ota:
+  password: !secret pwd_wifi_snetram_nl
+
+switch:
+  - platform: gpio
+    name: "${upper_devicename}"
+    pin: GPIO1
+    icon: mdi:weather-hurricane
+  - platform: restart
+    name: "Restart ${devicename}"
+
+text_sensor:
+  !include includes/wifi-info.yaml
+
+sensor:
+  !include includes/wifi-signal-strength.yaml

@@ -1,0 +1,49 @@
+---
+substitutions:
+  devicename: b3-winner
+  upper_devicename: B3 Winner
+
+esphome:
+  name: ${devicename}
+  platform: esp8266
+  board: esp12e
+
+<<: !include includes/wifi-connection.yaml
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: !secret pwd_wifi_snetram_nl
+
+ota:
+  password: !secret pwd_wifi_snetram_nl
+
+switch:
+  - platform: restart
+    name: "${upper_devicename} restart"
+  - platform: gpio
+    name: "${upper_devicename} relay"
+    pin: GPIO15
+    icon: mdi:toggle-switch-outline
+
+text_sensor:
+  - !include includes/wifi-info.yaml
+  - !include includes/esphome.yaml
+
+sensor:
+  - platform: ct_clamp
+    sensor: adc_sensor
+    name: Zaag A (${upper_devicename})
+    update_interval: 1s
+  # Example source sensor
+  - platform: adc
+    pin: A0
+    id: adc_sensor
+    name: Zaag U (${upper_devicename})
+    update_interval: 1s
+  - !include includes/wifi-signal-strength.yaml
+  - !include includes/uptime.yaml

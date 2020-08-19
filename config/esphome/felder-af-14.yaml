@@ -1,0 +1,39 @@
+---
+substitutions:
+  devicename: af-14
+  upper_devicename: "AF-14"
+
+esphome:
+  name: ${devicename}
+  platform: esp8266
+  board: esp12e
+
+<<: !include includes/wifi-connection.yaml
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: !secret pwd_wifi_snetram_nl
+
+ota:
+  password: !secret pwd_wifi_snetram_nl
+
+switch:
+  - platform: restart
+    name: "${upper_devicename} restart"
+  - platform: gpio
+    name: "${upper_devicename} relay"
+    pin: GPIO15
+    icon: mdi:weather-tornado
+
+text_sensor:
+  - !include includes/wifi-info.yaml
+  - !include includes/esphome.yaml
+
+sensor:
+  - !include includes/wifi-signal-strength.yaml
+  - !include includes/uptime.yaml
