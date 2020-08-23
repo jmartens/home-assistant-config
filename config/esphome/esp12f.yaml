@@ -4,9 +4,7 @@ substitutions:
   upper_devicename: Esp12f
 
 esphome:
-  name: ${devicename}
-  platform: esp8266
-  board: esp12e
+<<: !include esphome/boards/esp12e_relay_x1.yaml
 
 <<: !include includes/wifi-connection.yaml
 
