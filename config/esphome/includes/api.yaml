@@ -1,0 +1,6 @@
+---
+# https://esphome.io/components/api.html
+
+# Enable Home Assistant API
+api:
+  password: !secret pwd_wifi_snetram_nl

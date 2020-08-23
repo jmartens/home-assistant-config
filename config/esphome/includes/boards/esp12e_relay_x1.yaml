@@ -1,6 +1,10 @@
 ---
+# https://esphome.io/components/esphome.html
+
 # LC Technology AC/DC 1 Channel ESP-12F Dev Board
 # https://www.aliexpress.com/item/4000333913380.html
-name: ${devicename}
-platform: esp8266
-board: esp12e
+
+esphome:
+  name: ${devicename}
+  platform: esp8266
+  board: esp12e
