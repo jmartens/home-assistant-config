@@ -15,6 +15,7 @@ switch:
 
 text_sensor:
   - !include includes/text_sensors/wifi-info.yaml
+  - !include includes/text_sensors/mac.yaml
   - !include includes/text_sensors/esphome.yaml
 
 sensor:

@@ -8,6 +8,3 @@ ip_address:
 ssid:
   name: ${upper_devicename} SSID
   icon: mdi:access-point-network
-bssid:
-  name: ${upper_devicename} MAC address
-  icon: mdi:expansion-card-variant
