@@ -12,6 +12,9 @@ substitutions:
 
 switch:
   - !include includes/switches/restart.yaml
+  - platform: gpio
+    pin: GPIO15
+    name: ${upper_devicename} relay
 
 text_sensor:
   - !include includes/text_sensors/wifi-info.yaml

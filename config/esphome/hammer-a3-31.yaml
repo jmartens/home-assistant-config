@@ -21,3 +21,8 @@ text_sensor:
 sensor:
   - !include includes/sensors/wifi-signal-strength.yaml
   - !include includes/sensors/uptime.yaml
+
+binary_sensor:
+  - platform: gpio
+    pin: GPIO14
+    name: ${upper_devicename} jointer/planer
