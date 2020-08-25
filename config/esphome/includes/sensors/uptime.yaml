@@ -4,3 +4,5 @@
 platform: uptime
 name: ${upper_devicename} uptime
 unit_of_measurement: s
+# Fix warning in logs until an update of EPSHome updates mdi:timer to mdi:timer-outline
+icon: mdi:timer-outline
