@@ -1,0 +1,6 @@
+---
+# https://esphome.io/components/switch/gpio.html
+
+platform: gpio
+pin: GPIO{gpio_pin}
+name: "${upper_devicename} GPIO{gpio_pin}"

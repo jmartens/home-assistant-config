@@ -1,0 +1,10 @@
+---
+# https://esphome.io/components/sensor/uptime.html
+
+platform: uptime
+name: ${upper_devicename} uptime
+unit_of_measurement: s
+# Fix warning in logs until an update of EPSHome updates mdi:timer to mdi:timer-outline
+icon: mdi:timer-outline
+#value_template: |-
+#"{% if states('sensor.derick_location_for') | int <= 60 %}{{ states.sensor.derick_location_for.state}} Seconds{%elif states('sensor.derick_location_for') | int < 3600 %}{{ states.sensor.derick_location_for.state | int // 60 }} Minutes{%elif states('sensor.derick_location_for') | int >= 3600 %}{{ states.sensor.derick_location_for.state | round(common) | int * 0.000277 | round(4) }} Hours{%else%}??{%endif%}"

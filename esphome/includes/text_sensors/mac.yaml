@@ -1,0 +1,8 @@
+---
+# https://community.home-assistant.io/t/solved-esphomeyaml-wifi-info-publish/88852/8
+
+platform: template
+name: ${upper_devicename} MAC address
+lambda: 'return {WiFi.macAddress().c_str()};'
+icon: mdi:expansion-card-variant
+update_interval: 1d

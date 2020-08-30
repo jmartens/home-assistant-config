@@ -1,0 +1,172 @@
+- id: '1585594656641'
+  alias: Dustcollector ON
+  description: Enables dustcollector when other devices are switched on
+  trigger:
+  - device_id: f9cb1f71e4994618bcb9424ec7ad5ac0
+    domain: switch
+    entity_id: switch.shaper
+    platform: device
+    type: turned_on
+  condition: []
+  action:
+  - device_id: 39a5fad7f4754abaa535768e70669b9a
+    domain: switch
+    entity_id: switch.dustcollector
+    type: turn_on
+- id: '1585594752133'
+  alias: Dustcollector OFF
+  description: ''
+  trigger:
+  - device_id: f9cb1f71e4994618bcb9424ec7ad5ac0
+    domain: switch
+    entity_id: switch.shaper
+    platform: device
+    type: turned_off
+  condition: []
+  action:
+  - delay: 00:00:05
+  - device_id: 39a5fad7f4754abaa535768e70669b9a
+    domain: switch
+    entity_id: switch.dustcollector
+    type: turn_off
+- id: '1597426559284'
+  alias: Dustcollector ON
+  description: Switch on dustcollector relay
+  trigger:
+  - above: 0.9
+    device_id: 5a57e2dd37fc444585b8ba69f6e8e721
+    domain: sensor
+    entity_id: sensor.zaag_u_esp12f
+    platform: device
+    type: value
+  condition: []
+  action:
+  - device_id: 5a57e2dd37fc444585b8ba69f6e8e721
+    domain: switch
+    entity_id: switch.esp12f_relay
+    type: turn_on
+  mode: single
+- id: '1597426743149'
+  alias: Dustcollector OFF
+  description: Turn the dustcollector off after all devices have been switched off
+  trigger:
+  - below: 0.3
+    device_id: 5a57e2dd37fc444585b8ba69f6e8e721
+    domain: sensor
+    entity_id: sensor.zaag_u_esp12f
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 10
+    platform: device
+    type: value
+  condition: []
+  action:
+  - device_id: 5a57e2dd37fc444585b8ba69f6e8e721
+    domain: switch
+    entity_id: switch.esp12f_relay
+    type: turn_off
+  mode: single
+- id: '1598644081308'
+  alias: Nieuwe automatisering
+  description: ''
+  trigger:
+  - entity_id: group.dustcollector_clients
+    from: '0'
+    platform: state
+    to: '1'
+  condition: []
+  action:
+  - device_id: a6b3917d73eb46269a18f7d4abcaee67
+    domain: switch
+    entity_id: switch.af_14_relay
+    type: turn_on
+  mode: single
+- id: '1598644146797'
+  alias: Dustcollector ON
+  description: ''
+  trigger:
+  - entity_id: group.dustcollector_clients
+    for: 1s
+    from: '0'
+    platform: state
+    to: '1'
+  condition: []
+  action:
+  - device_id: a6b3917d73eb46269a18f7d4abcaee67
+    domain: switch
+    entity_id: switch.af_14_relay
+    type: turn_on
+  mode: single
+- id: '1598644265295'
+  alias: Nieuwe automatisering
+  description: ''
+  trigger:
+  - entity_id: group.dustcollector_clients
+    from: '0'
+    platform: state
+    to: '1'
+  condition: []
+  action:
+  - device_id: a6b3917d73eb46269a18f7d4abcaee67
+    domain: switch
+    entity_id: switch.af_14_relay
+    type: turn_on
+  mode: single
+- id: '1598644438439'
+  alias: Dustcollector ON
+  description: Turn the dustcollector on
+  trigger:
+  - entity_id: group.dustcollector_clients
+    from: '0'
+    platform: state
+    to: '1'
+  condition: []
+  action:
+  - device_id: a6b3917d73eb46269a18f7d4abcaee67
+    domain: switch
+    entity_id: switch.af_14_relay
+    type: turn_on
+  mode: single
+- id: '1598644486282'
+  alias: Nieuwe automatisering
+  description: ''
+  trigger:
+  - device_id: ee0ff56c2ef045d4afecf65b58b8ea85
+    domain: binary_sensor
+    entity_id: binary_sensor.a3_31_jointer_planer
+    platform: device
+    type: turned_on
+  condition: []
+  action:
+  - device_id: a6b3917d73eb46269a18f7d4abcaee67
+    domain: switch
+    entity_id: switch.af_14_relay
+    type: turn_on
+  mode: single
+- id: '1598713718001'
+  alias: Dustcollector ON
+  description: ''
+  trigger:
+  - entity_id: group.dustcollector_clients
+    from: 'Off'
+    platform: state
+    to: 'On'
+  condition: []
+  action:
+  - device_id: a6b3917d73eb46269a18f7d4abcaee67
+    domain: switch
+    entity_id: switch.af_14_relay
+    type: turn_on
+  mode: single
+- id: '1598713924961'
+  alias: Dustcollector ON
+  description: Turn on the dustcollector
+  trigger: []
+  condition: []
+  action:
+  - device_id: a6b3917d73eb46269a18f7d4abcaee67
+    domain: switch
+    entity_id: switch.af_14_relay
+    type: turn_on
+  mode: single

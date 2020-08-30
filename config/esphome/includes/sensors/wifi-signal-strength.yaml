@@ -1,0 +1,7 @@
+---
+# https://esphome.io/components/sensor/wifi_signal.html
+
+platform: wifi_signal
+name: "${upper_devicename} WiFi signal strength"
+update_interval: 60s
+icon: mdi:wifi-strength-outline

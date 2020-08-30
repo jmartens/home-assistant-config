@@ -1,0 +1,5 @@
+.esphome
+
+# Ignore source files
+*/src/
+*/platformio.ini

@@ -1,0 +1,11 @@
+- platform: rest
+  name: APK vervaldatum 03NBB1
+  resource: https://opendata.rdw.nl/resource/vkij-7mwc.json?kenteken=03NBB1
+  value_template: '{{ value_json[0].vervaldatum_keuring }}'
+  scan_interval: 86400
+- platform: rest
+  name: APK vervaldatum 48TKG5
+  resource: https://opendata.rdw.nl/resource/vkij-7mwc.json?kenteken=48TKG5
+  value_template: '{{ value_json[0].vervaldatum_keuring }}'
+  scan_interval: 86400
+

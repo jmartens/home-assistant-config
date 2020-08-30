@@ -1,0 +1,45 @@
+---
+substitutions:
+  devicename: esp12f
+  upper_devicename: Esp12f
+
+<<: !include includes/boards/esp12e_relay_x1.yaml
+
+<<: !include includes/wifi-connection.yaml
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: !secret pwd_wifi_snetram_nl
+
+ota:
+  password: !secret pwd_wifi_snetram_nl
+
+switch:
+  - platform: restart
+    name: "${upper_devicename} restart"
+  - platform: gpio
+    name: "${upper_devicename} relay"
+    pin: GPIO15
+    icon: mdi:toggle-switch-outline
+
+text_sensor:
+  - !include includes/text_sensors/wifi-info.yaml
+  - !include includes/text_sensors/esphome.yaml
+
+sensor:
+  - platform: ct_clamp
+    sensor: adc_sensor
+    name: Zaag A (${upper_devicename})
+    update_interval: 1s
+  # Example source sensor
+  - platform: adc
+    pin: A0
+    id: adc_sensor
+    name: Zaag U (${upper_devicename})
+    update_interval: 1s
+  - !include includes/sensors/wifi-signal-strength.yaml

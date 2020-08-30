@@ -1,0 +1,5 @@
+---
+# https://esphome.io/components/time.html
+
+platform: homeassistant
+id: homeassistant_time

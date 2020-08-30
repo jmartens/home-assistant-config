@@ -1,0 +1,22 @@
+---
+substitutions:
+  devicename: b3-winner
+  upper_devicename: B3 Winner
+
+<<: !include esphome/boards/esp12e_relay_x1.yaml
+<<: !include includes/wifi-connection.yaml
+<<: !include includes/captive_portal.yaml
+<<: !include includes/logger.yaml
+<<: !include includes/api.yaml
+<<: !include includes/ota.yaml
+
+switch:
+  - !include includes/switches/restart
+
+text_sensor:
+  - !include includes/text_sensors/wifi-info.yaml
+  - !include includes/text_sensors/esphome.yaml
+
+sensor:
+  - !include includes/sensors/wifi-signal-strength.yaml
+  - !include includes/sensors/uptime.yaml

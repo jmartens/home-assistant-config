@@ -1,0 +1,39 @@
+---
+# https://community.home-assistant.io/t/convert-seconds-to-days-hours-minutes/23152/25 (inspiration)
+- platform: template
+  name: ${upper_devicename} uptime friendly
+  friendly_name: ${upper_devicename} uptime
+  value_template: >-
+    {% set minute = 60 %}
+    {% set hour = 60 * minute %}
+    {% set day = 24 * hour %}
+    {% set week = 8 * day %}
+    {% set month = 4 * week %}
+    {% set year = 52 * week %}
+
+    {% set time = (states('sensor.${devicename}_uptime') | int) | int %}
+
+    {% set minutes = ((time % hour) / minute) | int %}
+    {% set hours = ((time % day) / hour) | int %}
+    {% set days = ((time / day) / week) | int %}
+    {% set weeks = ((time / week) / month) | int %}
+    {% set months = ((time / month) / year) | int %}
+    {% set years = (time / year) | int %}
+
+    {%- if time < minute -%}
+      {{ time }}s
+    {%- else -%}
+      {%- if years > 0 -%}
+        {{ years }}y{{ ' ' }}
+      {%- endif -%}
+      {%- if weeks > 0 -%}
+        {{ weeks }}w{{ ' ' }}
+      {%- endif -%}
+      {%- if days > 0 -%}
+        {{ days }}d{{ ' ' }}
+      {%- endif -%}
+      {%- if hours > 0 -%}
+        {{ hours }}h{{ ' ' }}
+      {%- endif -%}
+      {{ minutes }}m
+    {%- endif -%}  

@@ -1,0 +1,27 @@
+---
+substitutions:
+  devicename: af_14
+  upper_devicename: "AF 14"
+
+<<: !include includes/boards/esp12f_relay_x1.yaml
+<<: !include includes/wifi-connection.yaml
+<<: !include includes/captive_portal.yaml
+<<: !include includes/logger.yaml
+<<: !include includes/api.yaml
+<<: !include includes/ota.yaml
+<<: !include includes/webserver.yaml
+
+switch:
+  - !include includes/switches/restart.yaml
+  - platform: gpio
+    name: ${upper_devicename} relay
+    pin: GPIO15
+
+text_sensor:
+  - !include includes/text_sensors/wifi-info.yaml
+  - !include includes/text_sensors/mac.yaml
+  - !include includes/text_sensors/esphome.yaml
+
+sensor:
+  - !include includes/sensors/wifi-signal-strength.yaml
+  - !include includes/sensors/uptime.yaml

@@ -1,0 +1,12 @@
+---
+# https://esphome.io/components/wifi.html
+
+wifi:
+  ssid: !secret ssid_wifi_snetram_nl
+  password: !secret pwd_wifi_snetram_nl
+
+  # https://esphome.io/components/captive_portal.html
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "${upper_devicename} Fallback Hotspot"
+    password: !secret pwd_wifi_snetram_nl

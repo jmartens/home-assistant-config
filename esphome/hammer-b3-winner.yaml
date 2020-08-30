@@ -1,0 +1,34 @@
+---
+substitutions:
+  devicename: b3_winner
+  upper_devicename: B3 Winner
+
+<<: !include includes/boards/esp12f_relay_x1.yaml
+<<: !include includes/wifi-connection.yaml
+<<: !include includes/captive_portal.yaml
+<<: !include includes/logger.yaml
+<<: !include includes/api.yaml
+<<: !include includes/ota.yaml
+<<: !include includes/webserver.yaml
+
+switch:
+  - !include includes/switches/restart.yaml
+
+text_sensor:
+  - !include includes/text_sensors/wifi-info.yaml
+  - !include includes/text_sensors/mac.yaml
+  - !include includes/text_sensors/esphome.yaml
+
+sensor:
+  - !include includes/sensors/wifi-signal-strength.yaml
+  - !include includes/sensors/uptime.yaml
+
+binary_sensor:
+  - platform: gpio
+    pin: GPIO14
+    name: ${upper_devicename} saw
+#    device_class: window
+  - platform: gpio
+    pin: GPIO15
+    name: ${upper_devicename} shaper
+#    device_class: window
