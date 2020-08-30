@@ -39,7 +39,7 @@ jobs:
       - name: Getting your configuration from GitHub
         uses: actions/checkout@v1
       - name: Copy stub files into configuration folder
-        run: cp -R ./.stubs/* ./config
+        run: cp -R ./.stubs/* ./
       - name: Home Assistant Version
         uses: "docker://homeassistant/home-assistant:stable"
         with:
@@ -49,7 +49,7 @@ jobs:
         uses: "docker://homeassistant/home-assistant:stable"
         with:
           args: >
-            python -m homeassistant --config ./config/ --script check_config --info all
+            python -m homeassistant --config ./ --script check_config --info all
 
   esphome:
     runs-on: ubuntu-latest
@@ -68,8 +68,8 @@ jobs:
           pip list
           esphome version
       - name: Copy stub files into configuration folder
-        run: cp -R ./.stubs/* ./config/esphome/
+        run: cp -R ./.stubs/* ./esphome/
       - name: Run esphome on all files
         # yamllint disable rule:line-length
         run: |
-          for file in $(find ./config/esphome -maxdepth 1 -type f -name "*.yaml" -not -name "secrets.yaml"); do echo esphome "${file}" config; done
+          for file in $(find ./esphome -maxdepth 1 -type f -name "*.yaml" -not -name "secrets.yaml"); do echo esphome "${file}" config; done
