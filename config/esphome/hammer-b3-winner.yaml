@@ -3,7 +3,7 @@ substitutions:
   devicename: b3_winner
   upper_devicename: B3 Winner
 
-<<: !include includes/boards/esp12e_relay_x1.yaml
+<<: !include includes/boards/esp12f_relay_x1.yaml
 <<: !include includes/wifi-connection.yaml
 <<: !include includes/captive_portal.yaml
 <<: !include includes/logger.yaml
