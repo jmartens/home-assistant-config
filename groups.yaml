@@ -1,0 +1,6 @@
+dustcollector_clients:
+  name: Dustcollector clients
+  entities:
+    - binary_sensor.a3_31_jointer_planer
+    - binary_sensor.b3_winner_saw
+    - binary_sensor.b3_winner_shaper

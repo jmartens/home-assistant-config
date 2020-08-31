@@ -1,0 +1,31 @@
+---
+# https://www.home-assistant.io/integrations/automation
+- id: '1598903833453'
+  alias: Turn AF 14 relay ON
+  description: Switch on my dustcollector when there is a demand
+  trigger:
+    - entity_id: binary_sensor.ad_14_demand
+      platform: state
+      to: 'on'
+      condition: []
+  action:
+    - device_id: a6b3917d73eb46269a18f7d4abcaee67
+      domain: switch
+      entity_id: switch.af_14_relay
+      type: turn_on
+  mode: single
+- id: '1598904160691'
+  alias: Turn AF 14 relay OFF
+  description: Switch off my dustcollector when there is no demand
+  trigger:
+    - entity_id: binary_sensor.ad_14_demand
+      platform: state
+      to: 'off'
+  condition: []
+  action:
+    - delay: 00:00:05
+    - device_id: a6b3917d73eb46269a18f7d4abcaee67
+      domain: switch
+      entity_id: switch.af_14_relay
+      type: turn_off
+  mode: single

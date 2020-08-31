@@ -7,3 +7,15 @@ default_config:
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 # http:
 #   base_url: example.duckdns.org:8123
+
+group: !include groups.yaml
+automation: !include automations.yaml
+
+binary_sensor:
+  - platform: template
+    sensors:
+      ad_14_demand:
+        friendly_name: AF 14 dustcollector demand
+        value_template: >-
+          {{ expand('group.dustcollector_clients') | selectattr('state', 'eq', 'on') | list | count > 0 }}
+
