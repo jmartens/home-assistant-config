@@ -7,7 +7,6 @@
     - entity_id: binary_sensor.ad_14_demand
       platform: state
       to: 'on'
-      condition: []
   action:
     - device_id: a6b3917d73eb46269a18f7d4abcaee67
       domain: switch
@@ -21,7 +20,6 @@
     - entity_id: binary_sensor.ad_14_demand
       platform: state
       to: 'off'
-  condition: []
   action:
     - delay: 00:00:05
     - device_id: a6b3917d73eb46269a18f7d4abcaee67
