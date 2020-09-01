@@ -1,4 +1,6 @@
 ---
+# https://www.home-assistant.io/integrations/group/
+
 dustcollector_clients:
   name: Dustcollector clients
   entities:
