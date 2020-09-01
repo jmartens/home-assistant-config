@@ -21,7 +21,7 @@
       platform: state
       to: 'off'
   action:
-    - delay: 00:00:05
+    - delay: "{{ states('input_number.dustcollector_delay') | int | timestamp_custom('%H:%M:%S', False) }}"
     - device_id: a6b3917d73eb46269a18f7d4abcaee67
       domain: switch
       entity_id: switch.af_14_relay
