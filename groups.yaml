@@ -16,10 +16,5 @@ meter_readings:
     - sensor.power_consumption_phase_l1
     - sensor.power_consumption_phase_l2
     - sensor.power_consumption_phase_l3
-#    - sensor.energy_production_tarif_1
-#    - sensor.energy_production_tarif_2
-#    - sensor.power_production_phase_l1
-#    - sensor.power_production_phase_l2
-#    - sensor.power_production_phase_l3
     - sensor.gas_consumption
 
