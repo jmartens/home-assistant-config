@@ -3,6 +3,6 @@
 
 # Enable logging
 logger:
-# Disable uart (serial) logger
+  # Disable uart (serial) logger
   baud_rate: 0
 

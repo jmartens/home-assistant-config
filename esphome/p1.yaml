@@ -3,12 +3,12 @@
 substitutions:
   devicename: p1
   upper_devicename: "P1"
-  
+
 esphome:
   name: ${devicename}
   platform: ESP8266
   board: esp01_1m
-  
+  # yamllint disable-line
   # stream_reader: https://github.com/esphome/feature-requests/issues/660#issuecomment-673072149
   includes:
     - "includes/streamserver/stream_server.h"
@@ -40,8 +40,8 @@ uart:
   baud_rate: 9600
   data_bits: 7
   parity: even
-  
+
 custom_component:
   - lambda: |-
       auto stream_server = new StreamServerComponent(id(uart_bus));
-      return {stream_server}; 
+      return {stream_server};
