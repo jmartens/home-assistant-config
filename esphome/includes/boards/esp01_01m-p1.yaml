@@ -1,0 +1,5 @@
+---
+<<: !include includes/boards/esp01_01m.yaml
+  includes:
+    - "includes/streamserver/stream_server.h"
+    - "includes/streamserver/stream_server.cpp"

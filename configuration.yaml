@@ -10,12 +10,15 @@ default_config:
 
 group: !include groups.yaml
 automation: !include automations.yaml
+switch: !include switches/wol_mail_snetram_nl.yaml
+sensor: !include_dir_merge_list sensors
 
-binary_sensor:
-  - platform: template
-    sensors:
-      ad_14_demand:
-        friendly_name: AF 14 dustcollector demand
-        value_template: >-
-          {{ expand('group.dustcollector_clients') | selectattr('state', 'eq', 'on') | list | count > 0 }}
+logger:
+  default: warning
+  logs:
+    homeassistant.components.shell_command: debug
+    # DSMR related logging
+    homeassistant.components.dsmr: warning
+    dsmr_parser: warning
+    #custom_components.dsmr: warning
 

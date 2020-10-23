@@ -1,0 +1,47 @@
+---
+# P1 reader
+substitutions:
+  devicename: p1
+  upper_devicename: "P1"
+  
+esphome:
+  name: ${devicename}
+  platform: ESP8266
+  board: esp01_1m
+  
+  # stream_reader: https://github.com/esphome/feature-requests/issues/660#issuecomment-673072149
+  includes:
+    - "includes/streamserver/stream_server.h"
+    - "includes/streamserver/stream_server.cpp"
+
+<<: !include includes/wifi-connection.yaml
+<<: !include includes/captive_portal.yaml
+<<: !include includes/logger-no-serial.yaml
+<<: !include includes/api.yaml
+<<: !include includes/ota.yaml
+
+switch:
+  - !include includes/switches/restart.yaml
+
+text_sensor:
+  - !include includes/text_sensors/wifi-info.yaml
+  - !include includes/text_sensors/mac.yaml
+  - !include includes/text_sensors/esphome.yaml
+
+sensor:
+  - !include includes/sensors/wifi-signal-strength.yaml
+  - !include includes/sensors/uptime.yaml
+
+# https://esphome.io/custom/uart.html?highlight=custom_component
+uart:
+  id: uart_bus
+  tx_pin: GPIO1
+  rx_pin: GPIO3
+  baud_rate: 9600
+  data_bits: 7
+  parity: even
+  
+custom_component:
+  - lambda: |-
+      auto stream_server = new StreamServerComponent(id(uart_bus));
+      return {stream_server}; 
