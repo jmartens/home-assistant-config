@@ -7,3 +7,19 @@ dustcollector_clients:
     - binary_sensor.a3_31_jointer_planer
     - binary_sensor.b3_winner_saw
     - binary_sensor.b3_winner_shaper
+
+meter_readings:
+  name: Smart meter readings
+  entities:
+    - sensor.energy_consumption_tarif_1
+    - sensor.energy_consumption_tarif_2
+    - sensor.power_consumption_phase_l1
+    - sensor.power_consumption_phase_l2
+    - sensor.power_consumption_phase_l3
+#    - sensor.energy_production_tarif_1
+#    - sensor.energy_production_tarif_2
+#    - sensor.power_production_phase_l1
+#    - sensor.power_production_phase_l2
+#    - sensor.power_production_phase_l3
+    - sensor.gas_consumption
+
