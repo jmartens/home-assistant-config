@@ -4,5 +4,3 @@
 platform: dsmr
 host: !secret dsmr_p1_host
 port: !secret dsmr_p1_port
-#dsmr_version: 4
-#reconnect_interval: 10
