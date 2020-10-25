@@ -1,0 +1,131 @@
+# https://github.com/marketplace/actions/label-commenter
+
+labels:
+  - name: "integration: utility_meter"
+    labeled:
+      issue:
+        body: "#HomeAssistant ```utility_meter``` integration documentation - https://www.home-assistant.io/integrations/utility_meter/"
+
+  - name: "integration: waze"
+    labeled:
+      issue:
+        body: "### #HomeAssistant ```waze_trave_time``` integration \n 
+        * [Integration documentation](https://www.home-assistant.io/integrations/waze_travel_time/) \n 
+        * [Issues - Home Assistant](https://github.com/home-assistant/core/labels/integration%3A%20waze_travel_time) \n
+        * [Issues - My Repo](https://github.com/jcallaghan/home-assistant-config/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22integration%3A+waze%22)"
+
+  - name: "integration: tado"
+    labeled:
+      issue:
+        body: "### #HomeAssistant ```tado``` integration \n 
+        * [Integration documentation](https://www.home-assistant.io/integrations/tado/) \n 
+        * [Issues - Home Assistant](https://github.com/home-assistant/core/labels/integration%3A%20tado) \n
+        * [Issues - My Repo](https://github.com/jcallaghan/home-assistant-config/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22integration%3A+tado%22)"
+
+  - name: "integration: ring"
+    labeled:
+      issue:
+        body: "### #HomeAssistant ```ring``` integration 
+        * [Integration documentation](https://www.home-assistant.io/integrations/ring/)
+        * [Issues - Home Assistant](https://github.com/home-assistant/core/labels/integration%3A%20ring) \n
+        * [Issues - My Repo](https://github.com/jcallaghan/home-assistant-config/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22integration%3A+ring%22)"
+        
+  - name: "core: apple watch"
+    labeled:
+      issue:
+        body: "#HomeAssistant Mobile App ```Apple Watch``` documentation - https://companion.home-assistant.io/docs/apple-watch/apple-watch"
+
+  - name: "core: apple watch"
+    labeled:
+      issue:
+        body: "#HomeAssistant Mobile App ```Apple Watch Actions``` documentation - https://companion.home-assistant.io/docs/apple-watch/watch-actions/"
+        
+  - name: "core: mobile app"
+    labeled:
+      issue:
+        body: "#HomeAssistant ```Mobile App``` documentation - https://companion.home-assistant.io/docs/core/core"
+        
+  - name: "notification"
+    labeled:
+      issue:
+        body: "#HomeAssistant Mobile App ```notification``` documentation - https://companion.home-assistant.io/docs/notifications/notifications-basic"
+
+  - name: "integration: camera"
+    labeled:
+      issue:
+        body: "#HomeAssistant ```camera``` integration documentation - https://www.home-assistant.io/integrations/camera/"   
+     
+  - name: "integration: input_number"
+    labeled:
+      issue:
+        body: "#HomeAssistant ```input_number``` integration documentation - https://www.home-assistant.io/integrations/input_number/"
+
+  - name: "integration: input_text"
+    labeled:
+      issue:
+        body: "#HomeAssistant ```input_text``` integration documentation - https://www.home-assistant.io/integrations/input_text/"
+
+  - name: "integration: counter"
+    labeled:
+      issue:
+        body: "#HomeAssistant ```counter``` integration documentation - https://www.home-assistant.io/integrations/counter/"
+        
+  - name: "integration: input_boolean"
+    labeled:
+      issue:
+        body: "#HomeAssistant ```input_boolean``` integration documentation - https://www.home-assistant.io/integrations/input_boolean/"
+
+  - name: "integration: binary_sensor"
+    labeled:
+      issue:
+        body: "#HomeAssistant ```binary_sensor``` integration documentation - https://www.home-assistant.io/integrations/binary_sensor/ and https://www.home-assistant.io/integrations/binary_sensor.template/"
+        
+  - name: "integration: input_datetime"
+    labeled:
+      issue:
+        body: "#HomeAssistant ```input_datetime``` integration documentation - https://www.home-assistant.io/integrations/input_datetime/"
+        
+  - name: "integration: input_select"
+    labeled:
+      issue:
+        body: "#HomeAssistant ```input_select``` integration documentation - https://www.home-assistant.io/integrations/input_select/"
+
+  - name: "integration: person"
+    labeled:
+      issue:
+        body: "#HomeAssistant ```person``` integration documentation - https://www.home-assistant.io/integrations/person/"
+        
+  - name: "integration: timer"
+    labeled:
+      issue:
+        body: "#HomeAssistant ```timer``` integration documentation - https://www.home-assistant.io/integrations/timer/"
+        
+  - name: "integration: sensor_template"
+    labeled:
+      issue:
+        body: "#HomeAssistant ```sensor``` integration documentation - https://www.home-assistant.io/integrations/template/"
+        
+  - name: "core: lovelace"
+    labeled:
+      issue:
+        body: "#HomeAssistant ```lovelace``` documentation - https://www.home-assistant.io/lovelace/"        
+        
+  - name: "lovelace: dashboards"
+    labeled:
+      issue:
+        body: "#HomeAssistant ```lovelace dashboards``` documentation - https://www.home-assistant.io/lovelace/dashboards-and-views/"           
+        
+  - name: "lovelace: cards"
+    labeled:
+      issue:
+        body: "#HomeAssistant ```lovelace cards``` documentation - https://www.home-assistant.io/lovelace/entity/"     
+
+  - name: "integration: trend"
+    labeled:
+      issue:
+        body: "#HomeAssistant ```trend``` documentation - https://www.home-assistant.io/integrations/trend/"  
+
+  - name: "integration: trend"
+    labeled:
+      issue:
+        body: "#HomeAssistant ```binary_sensor``` ```device-class``` documentation - https://www.home-assistant.io/integrations/binary_sensor/#device-class"
