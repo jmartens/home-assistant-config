@@ -21,3 +21,29 @@ logger:
     homeassistant.components.dsmr: warning
     dsmr_parser: warning
     # custom_components.dsmr: warning
+
+utility_meter:
+  daily_energy_offpeak:
+    name: Daily Energy Consumption (tarif 1)
+    source: sensor.energy_consumption_tarif_1
+    cycle: daily
+  daily_energy_peak:
+    name: Daily Energy Consumption (tarif 2)
+    source: sensor.energy_consumption_tarif_2
+    cycle: daily
+  daily_gas:
+    name: Daily Gas Consumption
+    source: sensor.gas_consumption
+    cycle: daily
+  monthly_energy_offpeak:
+    name: Monthly Energy Consumption (tarif 1)
+    source: sensor.energy_consumption_tarif_1
+    cycle: monthly
+  monthly_energy_peak:
+    name: Monthly Energy Consumption (tarif 2)
+    source: sensor.energy_consumption_tarif_2
+    cycle: monthly
+  monthly_gas:
+    name: Monthly Gas Consumption
+    source: sensor.gas_consumption
+    cycle: monthly
