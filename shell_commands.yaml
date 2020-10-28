@@ -1,0 +1,1 @@
+curl_mindergas: "curl -v -H Content-Type:application/json -H AUTH-TOKEN:{{ token }} -d '{\"date\": \"{{ date }}\", \"reading\": \"{{ reading }}\"}' {{ url }}"
