@@ -35,11 +35,6 @@
     at: 00:00:00
   condition: []
   action:
-  - service: shell_command.curl_mindergas
-    data:
-      token: CrS9uHDmqHazGQRBxdyf
-      url: https://www.mindergas.nl/api/gas_meter_readings
-      reading: '{{ states("sensor.gas_consumption") }}'
-      date: '{{ as_timestamp(now() - timedelta(days=1)) | timestamp_custom("%Y-%m-%d")
-        }}'
+  - service: rest_command.mindergas
+    data: {}
   mode: single
