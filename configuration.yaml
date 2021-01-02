@@ -21,4 +21,3 @@ logger:
     homeassistant.components.dsmr: warning
     dsmr_parser: warning
     # custom_components.dsmr: warning
-
