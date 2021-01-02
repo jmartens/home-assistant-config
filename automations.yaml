@@ -27,3 +27,19 @@
       entity_id: switch.af_14_relay
       type: turn_off
   mode: single
+- id: '1603896321522'
+  alias: Mindergas API submission
+  description: Submission of daily gas meter reading to mindergas.nl
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition: []
+  action:
+  - service: shell_command.curl_mindergas
+    data:
+      token: CrS9uHDmqHazGQRBxdyf
+      url: https://www.mindergas.nl/api/gas_meter_readings
+      reading: '{{ states("sensor.gas_consumption") }}'
+      date: '{{ as_timestamp(now() - timedelta(days=1)) | timestamp_custom("%Y-%m-%d")
+        }}'
+  mode: single
