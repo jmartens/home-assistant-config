@@ -10,7 +10,6 @@ default_config:
 
 group: !include groups.yaml
 automation: !include automations.yaml
-switch: !include switches/wol_mail_snetram_nl.yaml
 sensor: !include_dir_merge_list sensors
 
 logger:
